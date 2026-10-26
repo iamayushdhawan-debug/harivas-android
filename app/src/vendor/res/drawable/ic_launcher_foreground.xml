@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vendor App Icon Foreground — Shop / Store front -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Shop building -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,75 L30,50 L78,50 L78,75 Z" />
+    <!-- Shop roof / awning -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,50 L54,35 L83,50 Z" />
+    <!-- Shop door -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M46,75 L46,60 Q46,57 50,57 L58,57 Q62,57 62,60 L62,75 Z" />
+    <!-- Left window -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M33,55 L42,55 L42,65 L33,65 Z" />
+    <!-- Right window -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M66,55 L75,55 L75,65 L66,65 Z" />
+    <!-- Sign board on awning -->
+    <path
+        android:fillColor="#F8CB46"
+        android:pathData="M38,43 L70,43 L70,49 L38,49 Z" />
+</vector>
