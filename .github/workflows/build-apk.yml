@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
@@ -18,53 +18,45 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.7'
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+          cache: gradle
 
       - name: Create dummy google-services.json
         run: |
-          cat > app/google-services.json << 'EOF'
-          {
-            "project_info": {
-              "project_number": "000000000000",
-              "project_id": "harivas-app",
-              "storage_bucket": "harivas-app.appspot.com"
+          python3 -c "
+          import json, os
+          data = {
+            'project_info': {
+              'project_number': '000000000000',
+              'project_id': 'harivas-app',
+              'storage_bucket': 'harivas-app.appspot.com'
             },
-            "client": [
-              {
-                "client_info": {
-                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
-                  "android_client_info": {
-                    "package_name": "com.harivas.app"
-                  }
-                },
-                "oauth_client": [],
-                "api_key": [{ "current_key": "dummy_key_replace_with_real" }],
-                "services": {
-                  "appinvite_service": { "other_platform_oauth_client": [] }
-                }
-              }
-            ],
-            "configuration_version": "1"
+            'client': [{
+              'client_info': {
+                'mobilesdk_app_id': '1:000000000000:android:0000000000000000',
+                'android_client_info': {'package_name': 'com.harivas.app'}
+              },
+              'oauth_client': [],
+              'api_key': [{'current_key': 'dummy_key'}],
+              'services': {'appinvite_service': {'other_platform_oauth_client': []}}
+            }],
+            'configuration_version': '1'
           }
-          EOF
+          with open('app/google-services.json', 'w') as f:
+              json.dump(data, f, indent=2)
+          print('google-services.json created')
+          "
 
       - name: Generate Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.7
-
-      - name: Grant execute permission
-        run: chmod +x gradlew
+        run: |
+          gradle wrapper --gradle-version=8.7 --distribution-type=bin
+          chmod +x gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug --no-daemon --stacktrace
+        env:
+          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx2g -Dorg.gradle.daemon=false"
 
-      - name: Upload APK
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: HARIVAS-debug-apk

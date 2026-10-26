@@ -67,7 +67,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.okhttp)
     implementation(libs.play.services.location)
-    implementation(libs.accompanist.permissions)
 
     // Firebase (BOM manages versions for all Firebase libs)
     implementation(platform(libs.firebase.bom))
