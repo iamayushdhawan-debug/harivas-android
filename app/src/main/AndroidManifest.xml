@@ -82,7 +82,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="YOUR-SITE.com" android:pathPrefix="/harivas" />
+                <data android:scheme="https" android:host="gkgos.in" android:pathPrefix="/harivas" />
             </intent-filter>
 
             <!-- Deep link: /harivas-rider/ -->
@@ -90,7 +90,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="YOUR-SITE.com" android:pathPrefix="/harivas-rider" />
+                <data android:scheme="https" android:host="gkgos.in" android:pathPrefix="/harivas-rider" />
             </intent-filter>
 
             <!-- Deep link: /harivas-vendor/ -->
@@ -98,7 +98,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="YOUR-SITE.com" android:pathPrefix="/harivas-vendor" />
+                <data android:scheme="https" android:host="gkgos.in" android:pathPrefix="/harivas-vendor" />
             </intent-filter>
 
             <!-- Deep link: /harivas-staff/ -->
@@ -106,7 +106,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="YOUR-SITE.com" android:pathPrefix="/harivas-staff" />
+                <data android:scheme="https" android:host="gkgos.in" android:pathPrefix="/harivas-staff" />
             </intent-filter>
 
             <!-- Deep link: /harivas-admin/ -->
@@ -114,7 +114,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="YOUR-SITE.com" android:pathPrefix="/harivas-admin" />
+                <data android:scheme="https" android:host="gkgos.in" android:pathPrefix="/harivas-admin" />
             </intent-filter>
 
         </activity>

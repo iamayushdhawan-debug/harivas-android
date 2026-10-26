@@ -16,7 +16,7 @@ android {
         versionName = "1.0.0"
 
         // ── Replace with your WordPress site URL (no trailing slash) ──────────────
-        buildConfigField("String", "SITE_URL", "\"https://YOUR-SITE.com\"")
+        buildConfigField("String", "SITE_URL", "\"https://gkgos.in\"")
         // ─────────────────────────────────────────────────────────────────────────
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
