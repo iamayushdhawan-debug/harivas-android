@@ -1,4 +1,4 @@
-name: Build Debug APK
+name: Build All APKs (Store + Rider + Vendor)
 
 on:
   push:
@@ -20,30 +20,50 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Create dummy google-services.json
+      - name: Create google-services.json
         run: |
           python3 -c "
-          import json, os
+          import json
           data = {
             'project_info': {
               'project_number': '000000000000',
               'project_id': 'harivas-app',
               'storage_bucket': 'harivas-app.appspot.com'
             },
-            'client': [{
-              'client_info': {
-                'mobilesdk_app_id': '1:000000000000:android:0000000000000000',
-                'android_client_info': {'package_name': 'com.harivas.app'}
+            'client': [
+              {
+                'client_info': {
+                  'mobilesdk_app_id': '1:000000000000:android:0000000000000001',
+                  'android_client_info': {'package_name': 'com.harivas.app.store'}
+                },
+                'oauth_client': [],
+                'api_key': [{'current_key': 'dummy'}],
+                'services': {'appinvite_service': {'other_platform_oauth_client': []}}
               },
-              'oauth_client': [],
-              'api_key': [{'current_key': 'dummy_key'}],
-              'services': {'appinvite_service': {'other_platform_oauth_client': []}}
-            }],
+              {
+                'client_info': {
+                  'mobilesdk_app_id': '1:000000000000:android:0000000000000002',
+                  'android_client_info': {'package_name': 'com.harivas.app.rider'}
+                },
+                'oauth_client': [],
+                'api_key': [{'current_key': 'dummy'}],
+                'services': {'appinvite_service': {'other_platform_oauth_client': []}}
+              },
+              {
+                'client_info': {
+                  'mobilesdk_app_id': '1:000000000000:android:0000000000000003',
+                  'android_client_info': {'package_name': 'com.harivas.app.vendor'}
+                },
+                'oauth_client': [],
+                'api_key': [{'current_key': 'dummy'}],
+                'services': {'appinvite_service': {'other_platform_oauth_client': []}}
+              }
+            ],
             'configuration_version': '1'
           }
           with open('app/google-services.json', 'w') as f:
               json.dump(data, f, indent=2)
-          print('google-services.json created')
+          print('google-services.json created with 3 clients')
           "
 
       - name: Generate Gradle Wrapper
@@ -51,14 +71,28 @@ jobs:
           gradle wrapper --gradle-version=8.7 --distribution-type=bin
           chmod +x gradlew
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+      - name: Build all 3 Debug APKs
+        run: ./gradlew assembleStoreDebug assembleRiderDebug assembleVendorDebug --no-daemon --stacktrace
         env:
           GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx2g -Dorg.gradle.daemon=false"
 
-      - name: Upload APK artifact
+      - name: Upload Store APK
         uses: actions/upload-artifact@v4
         with:
-          name: HARIVAS-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: HARIVAS-Store-APK
+          path: app/build/outputs/apk/store/debug/app-store-debug.apk
+          retention-days: 30
+
+      - name: Upload Rider APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: HARIVAS-Rider-APK
+          path: app/build/outputs/apk/rider/debug/app-rider-debug.apk
+          retention-days: 30
+
+      - name: Upload Vendor APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: HARIVAS-Vendor-APK
+          path: app/build/outputs/apk/vendor/debug/app-vendor-debug.apk
           retention-days: 30

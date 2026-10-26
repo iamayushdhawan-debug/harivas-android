@@ -177,8 +177,8 @@ class MainActivity : AppCompatActivity() {
         val bridge = HvJsBridge(this)
         webView.addJavascriptInterface(bridge, "HvNative")
 
-        // Load default portal
-        webView.loadUrl("${BuildConfig.SITE_URL}/harivas/")
+        // Load portal based on flavor (store / rider / vendor)
+        webView.loadUrl("${BuildConfig.SITE_URL}${BuildConfig.PORTAL_PATH}")
     }
 
     // ── File chooser intent builder ──────────────────────────────────────────

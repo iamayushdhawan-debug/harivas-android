@@ -14,12 +14,34 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0.0"
-
-        // ── Replace with your WordPress site URL (no trailing slash) ──────────────
         buildConfigField("String", "SITE_URL", "\"https://gkgos.in\"")
-        // ─────────────────────────────────────────────────────────────────────────
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // ── 3 separate APKs via product flavors ──────────────────────────────────
+    flavorDimensions += "portal"
+    productFlavors {
+        create("store") {
+            dimension = "portal"
+            applicationIdSuffix = ".store"
+            versionNameSuffix = "-store"
+            resValue("string", "app_name", "HARIVAS Store")
+            buildConfigField("String", "PORTAL_PATH", "\"/harivas/\"")
+        }
+        create("rider") {
+            dimension = "portal"
+            applicationIdSuffix = ".rider"
+            versionNameSuffix = "-rider"
+            resValue("string", "app_name", "HARIVAS Rider")
+            buildConfigField("String", "PORTAL_PATH", "\"/harivas-rider/\"")
+        }
+        create("vendor") {
+            dimension = "portal"
+            applicationIdSuffix = ".vendor"
+            versionNameSuffix = "-vendor"
+            resValue("string", "app_name", "HARIVAS Vendor")
+            buildConfigField("String", "PORTAL_PATH", "\"/harivas-vendor/\"")
+        }
     }
 
     buildTypes {
@@ -67,7 +89,6 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.play.services.location)
 
-    // Firebase (BOM manages versions for all Firebase libs)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.analytics)
