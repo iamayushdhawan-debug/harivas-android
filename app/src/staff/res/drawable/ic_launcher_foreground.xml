@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Staff Icon Foreground — Person with Hard Hat (Worker) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Body / Torso -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,78 Q30,60 54,60 Q78,60 78,78 L78,82 L30,82 Z" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,56 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+
+    <!-- Hard Hat brim -->
+    <path
+        android:fillColor="#F8CB46"
+        android:pathData="M36,40 L72,40 L74,44 L34,44 Z" />
+
+    <!-- Hard Hat dome -->
+    <path
+        android:fillColor="#F8CB46"
+        android:pathData="M40,40 Q40,28 54,28 Q68,28 68,40 Z" />
+
+    <!-- Hat stripe -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,34 L64,34"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:fillAlpha="0" />
+
+    <!-- Clipboard in hand -->
+    <path
+        android:fillColor="#F8CB46"
+        android:pathData="M62,65 L74,65 L74,80 L62,80 Z" />
+    <path
+        android:fillColor="#6A1B9A"
+        android:pathData="M64,68 L72,68 M64,71 L72,71 M64,74 L70,74"
+        android:strokeColor="#6A1B9A"
+        android:strokeWidth="1.5"
+        android:fillAlpha="0" />
+</vector>

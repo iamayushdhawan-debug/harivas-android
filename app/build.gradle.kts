@@ -18,7 +18,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    // ── 3 separate APKs via product flavors ──────────────────────────────────
     flavorDimensions += "portal"
     productFlavors {
         create("store") {
@@ -41,6 +40,20 @@ android {
             versionNameSuffix = "-vendor"
             resValue("string", "app_name", "HARIVAS Vendor")
             buildConfigField("String", "PORTAL_PATH", "\"/harivas-vendor/\"")
+        }
+        create("staff") {
+            dimension = "portal"
+            applicationIdSuffix = ".staff"
+            versionNameSuffix = "-staff"
+            resValue("string", "app_name", "HARIVAS Staff")
+            buildConfigField("String", "PORTAL_PATH", "\"/harivas-staff/\"")
+        }
+        create("admin") {
+            dimension = "portal"
+            applicationIdSuffix = ".admin"
+            versionNameSuffix = "-admin"
+            resValue("string", "app_name", "HARIVAS Admin")
+            buildConfigField("String", "PORTAL_PATH", "\"/harivas-admin/\"")
         }
     }
 
@@ -88,7 +101,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.okhttp)
     implementation(libs.play.services.location)
-
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.analytics)
