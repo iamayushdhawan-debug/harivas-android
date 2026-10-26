@@ -1,0 +1,33 @@
+# Built output
+build/
+.gradle/
+*.apk
+*.aab
+*.ap_
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# Local config (DO NOT commit)
+local.properties
+google-services.json
+
+# Key stores (never commit signing keys)
+*.jks
+*.keystore
+
+# Proguard
+proguard/
+
+# Generated files
+app/src/main/java/com/harivas/app/BuildConfig.kt
+
+# Gradle wrapper (optional – keep for reproducible builds)
+# gradle/wrapper/gradle-wrapper.jar
+
+# MacOS
+.DS_Store

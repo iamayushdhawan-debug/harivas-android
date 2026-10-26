@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Temp images captured by camera for file upload -->
+    <external-files-path
+        name="camera_captures"
+        path="Pictures/" />
+
+    <!-- Downloads / general external files -->
+    <external-files-path
+        name="external_files"
+        path="." />
+
+    <!-- Internal cache (fallback) -->
+    <cache-path
+        name="cache"
+        path="." />
+</paths>

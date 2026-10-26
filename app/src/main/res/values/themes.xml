@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base app theme — Material3 DayNight, no ActionBar -->
+    <style name="Theme.Harivas" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <!-- Keep status-bar icons dark (yellow background) -->
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Splash / Launch theme (keeps background until WebView is ready) -->
+    <style name="Theme.Harivas.Splash" parent="Theme.Harivas">
+        <item name="android:windowBackground">@color/primary</item>
+    </style>
+
+</resources>

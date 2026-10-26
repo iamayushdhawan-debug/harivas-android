@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand yellow -->
+    <color name="primary">#F8CB46</color>
+    <color name="primary_dark">#E5B400</color>
+    <!-- Brand green -->
+    <color name="accent">#388E3C</color>
+    <!-- Backgrounds -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#FFFDE7</color>
+    <!-- Text -->
+    <color name="on_primary">#000000</color>
+    <color name="on_accent">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+</resources>

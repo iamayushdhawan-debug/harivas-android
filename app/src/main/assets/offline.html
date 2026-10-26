@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No Connection – HARIVAS</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        .card {
+            text-align: center;
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .emoji {
+            font-size: 80px;
+            line-height: 1;
+            margin-bottom: 20px;
+            animation: wobble 2s infinite ease-in-out;
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-5deg); }
+            50%       { transform: rotate(5deg); }
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #E5B400;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #000;
+            margin-bottom: 28px;
+        }
+
+        .logo span {
+            color: #F8CB46;
+        }
+
+        button {
+            background: #F8CB46;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+        }
+
+        button:active {
+            background: #E5B400;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">HARI<span>VAS</span></div>
+        <div class="emoji">🛵</div>
+        <h1>No Internet Connection</h1>
+        <p>Looks like our scooter lost signal!<br>Please check your connection and try again.</p>
+        <button onclick="window.location.reload()">Retry</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "_comment": [
+    "================================================================",
+    " HARIVAS Android App – google-services.json PLACEHOLDER",
+    "================================================================",
+    " This file is NOT a real credentials file.",
+    " Replace it with the real google-services.json from Firebase:",
+    "   1. Go to https://console.firebase.google.com/",
+    "   2. Create / open your project",
+    "   3. Add an Android app with package name: com.harivas.app",
+    "   4. Download google-services.json",
+    "   5. Place it at:  app/google-services.json  (same level as this file)",
+    "   6. Remove this placeholder file (or delete the _comment key)",
+    "================================================================"
+  ],
+  "project_info": {
+    "project_number": "000000000000",
+    "project_id": "harivas-app-placeholder",
+    "storage_bucket": "harivas-app-placeholder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "android_client_info": {
+          "package_name": "com.harivas.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "REPLACE_WITH_REAL_API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

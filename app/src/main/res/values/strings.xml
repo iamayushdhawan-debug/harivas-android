@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HARIVAS</string>
+
+    <!-- Offline screen -->
+    <string name="offline_title">No Internet Connection</string>
+    <string name="offline_message">Please check your connection and try again.</string>
+    <string name="retry">Retry</string>
+
+    <!-- File chooser -->
+    <string name="choose_file">Choose File</string>
+
+    <!-- Notification channels -->
+    <string name="channel_orders_name">Order Updates</string>
+    <string name="channel_orders_desc">Notifications for order status changes</string>
+    <string name="channel_rider_name">Rider Alerts</string>
+    <string name="channel_rider_desc">Urgent alerts for incoming delivery jobs</string>
+    <string name="channel_location_name">Location Sharing</string>
+    <string name="channel_location_desc">Shown while your location is being shared for a delivery</string>
+
+    <!-- Location foreground notification -->
+    <string name="location_notification_title">Sharing your location for delivery</string>
+    <string name="location_notification_body">HARIVAS is tracking your position for this order.</string>
+    <string name="stop_tracking">Stop</string>
+
+    <!-- Portal names -->
+    <string name="portal_store">HARIVAS Store</string>
+    <string name="portal_rider">Rider Portal</string>
+    <string name="portal_vendor">Vendor Portal</string>
+    <string name="portal_staff">Staff Portal</string>
+    <string name="portal_admin">Admin Portal</string>
+</resources>
